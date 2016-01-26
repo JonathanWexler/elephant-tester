@@ -3,7 +3,7 @@ class ElephantOwner < ActiveRecord::Base
  has_secure_password
 
  validates_presence_of :first_name, :last_name, :birthday, :city, :state, :email
- 
+
  validates_uniqueness_of :email
 
  has_many :elephants
@@ -13,7 +13,7 @@ class ElephantOwner < ActiveRecord::Base
 end
 
 def age
-    self.Time.now.year - birthday.year
+    Time.now.year - birthday.year
 end
 
 def location
